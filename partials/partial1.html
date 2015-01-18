@@ -1,33 +1,42 @@
 <div ng-include="'partials/header.html'"></div>
-
-
-    <div class="container theme-showcase">
-     
-      
-
-
-
-      
-      <div class="row-fluid">
-         
-          
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Sample request</h3>
-            </div>
-            <div class="panel-body">{{data}}
-           
-         
-            </div>
-          </div>
+<div class="container theme-showcase">
+  
+  
+  
+  <div class="row-fluid">
+    
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Categories</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li ng-repeat="phone in data">
+            <span><a href="#/category/{{phone.id}}">{{phone.id}} - {{phone.name}}</a></span>
+            <ul>
+              <li ng-repeat="p1 in phone.children">
+                <span> <a href="#/category/{{p1.id}}">{{p1.id}} - {{p1.name}}</a></span>
+                <ul>
+                  <li ng-repeat="p2 in p1.children">
+                    <span><a href="#/category/{{p2.id}}">{{p2.id}} - {{p2.name}}</a></span>
+                  </li>
+                </ul>
+                <ul>
+                  <li ng-repeat="p3 in p2.children">
+                    <span><a href="#/category/{{p3.id}}">{{p3.id}} - {{p3.name}}</a></span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
         
         
       </div>
-
-
-
-      
-
-
-    </div> <!-- /container -->
+    </div>
+    
+    
+  </div>
   
+  </div> <!-- /container -->
