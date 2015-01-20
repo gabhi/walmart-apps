@@ -4,7 +4,7 @@
         <script>
             $(document).ready(function(){
                 $.ajax({
-                    url: 'http://api.walmartlabs.com/v1/feeds/bestsellers?apikey=a6kwenh4cpva3tzt7wdvwb7r',
+                    url: 'https://gentle-plateau-9672.herokuapp.com/wm/bestsellers/3944',
                     dataType: 'jsonp',
                     success: function(data){
                         $("#data").html(JSON.stringify(data));
